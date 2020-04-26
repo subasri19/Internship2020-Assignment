@@ -26,10 +26,6 @@ vector<pair<string, string> > read_file(string filename){
 	while (std::getline(file, line)){
         vector<string> row_values;
         split(line, '\t', row_values);
-        
-        // for (int i=0; i!=row_values.size(); i++)
-        //     cout << row_values[i] << ',' ;
-        // cout<<'\t';
 
         m.push_back(make_pair(row_values[1], row_values[0]));
     }
@@ -37,20 +33,12 @@ vector<pair<string, string> > read_file(string filename){
 	return m;
 }
 
-void print_map(vector<pair<string, string> > m){
-	for (itr1 = 0; itr1 != m.size(); ++itr1) { 
-        cout << '\t' << m[itr1].first 
-             << '\t' << m[itr1].second << '\n'; 
-    } 
-    cout << endl; 
-}
 
 int main() { 
 	string s1, s2, s3;
 	int found;
 	
 	string file1="character_mapping.txt";
-	// string file1="sample.txt";
 	string file2="word_corpus.txt";
 	
 	char_representation = read_file(file1);
